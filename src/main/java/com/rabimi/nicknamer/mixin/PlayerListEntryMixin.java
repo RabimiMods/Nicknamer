@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerListHud.class)
-public class PlayerListHudMixin {
+public class PlayerListEntryMixin {
 
     @Inject(method = "getPlayerName", at = @At("HEAD"), cancellable = true)
     private void onGetPlayerName(PlayerListEntry entry, CallbackInfoReturnable<Text> cir) {
