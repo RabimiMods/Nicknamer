@@ -19,7 +19,7 @@ public class ChatScreenMixin {
 
         message = message.replace(original, nick);
 
-        MinecraftClient.getInstance().player.networkHandler.sendChatMessage(message, addToHistory);
+        MinecraftClient.getInstance().player.networkHandler.sendChatMessage(message);
         ci.cancel();
     }
 }
