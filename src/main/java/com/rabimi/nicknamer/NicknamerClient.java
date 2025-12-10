@@ -6,24 +6,18 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 
 public class NicknamerClient implements ClientModInitializer {
 
-    private static String nickname = "Rabimi";
+    // 最初は空文字、自由に設定可能
+    private static String nickname = "";
 
     @Override
     public void onInitializeClient() {
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (client.player != null) {
-                client.player.setCustomName(Text.literal(nickname));
-                client.player.setCustomNameVisible(true);
-            }
-        });
-
+        // コマンド登録
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             registerCommands(dispatcher);
         });
@@ -51,10 +45,15 @@ public class NicknamerClient implements ClientModInitializer {
     }
 
     public static void setNickname(String newName) {
+        if (newName == null) newName = "";
         nickname = newName;
     }
 
     public static String getNickname() {
         return nickname;
+    }
+
+    public static boolean hasNickname() {
+        return nickname != null && !nickname.isEmpty();
     }
 }
