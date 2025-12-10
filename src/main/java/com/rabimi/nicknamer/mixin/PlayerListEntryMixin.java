@@ -17,7 +17,10 @@ public class PlayerListHudMixin {
     private void onGetPlayerName(PlayerListEntry entry, CallbackInfoReturnable<Text> cir) {
 
         var client = MinecraftClient.getInstance();
-        if (!entry.getProfile().getId().equals(client.getSession().getUuid())) return;
+        if (client.player == null) return;
+
+        // 自分だけ置き換え
+        if (!entry.getProfile().getId().equals(client.player.getUuid())) return;
 
         String nick = NicknamerClient.getNickname();
         if (nick == null || nick.isEmpty()) return;
