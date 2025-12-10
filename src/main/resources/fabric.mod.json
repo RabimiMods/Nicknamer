@@ -1,19 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "nametag",
+  "id": "nicknamer",
   "version": "1.0.0",
-  "name": "Nametag",
-  "description": "Show your own nametag.",
+  "name": "Nicknamer",
+  "description": "Client-side nickname mod",
   "authors": ["RabimiMods"],
+  "contact": {},
+  "license": "MIT",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.rabimi.nametag.NametagClient"
+      "com.rabimi.nicknamer.NicknamerClient"
     ]
   },
+  "mixins": [
+    "mixins.nicknamer.json"
+  ],
   "depends": {
+    "fabricloader": ">=0.16.0",
     "minecraft": ">=1.21.0 <1.22.0",
-    "fabricloader": ">=0.15.0",
-    "fabric-api": "*"
+    "java": ">=21"
   }
 }
