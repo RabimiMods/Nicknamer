@@ -3,19 +3,20 @@
   "id": "nicknamer",
   "version": "1.0.0",
   "name": "Nicknamer",
-  "description": "Client-side nickname mod",
-  "authors": ["RabimiMods"],
-  "contact": {},
-  "license": "MIT",
+  "description": "Client-side nickname mod with chat, TAB, nametag, and GUI",
+  "authors": ["Rabimi"],
   "environment": "client",
+
   "entrypoints": {
     "client": [
       "com.rabimi.nicknamer.NicknamerClient"
     ]
   },
+
   "mixins": [
     "mixins.nicknamer.json"
   ],
+
   "depends": {
     "fabricloader": ">=0.16.0",
     "minecraft": ">=1.21.0 <1.22.0",
