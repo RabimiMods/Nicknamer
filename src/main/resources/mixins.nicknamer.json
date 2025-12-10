@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.rabimi.nicknamer.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "PlayerListEntryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
