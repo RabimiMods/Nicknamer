@@ -4,7 +4,9 @@
   "package": "com.rabimi.nicknamer.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "PlayerListEntryMixin"
+    "PlayerListEntryMixin",
+    "ChatScreenMixin",
+    "ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
